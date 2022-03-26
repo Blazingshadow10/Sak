@@ -5,11 +5,11 @@ public class Sak {
 			System.out.println("Please use one of the listed commands below. You can pull up this information again with \"-Help\"." );
 			Help.printHelp();		 
 		} 
-		else if (args[0].equalsIgnoreCase("-Help") || args[0].equalsIgnoreCase("-help")) {
+		else if (args[0].equalsIgnoreCase("-Help")) {
 			System.out.println("Executing Help...");
 			Help.printHelp();		  
 		} 
-		else if (args[0].equalsIgnoreCase("-HttpRequest") || args[0].equalsIgnoreCase("-httprequest")) {
+		else if (args[0].equalsIgnoreCase("-HttpRequest")) {
 			if (args.length != 2) {
 				System.out.println("Error:\nNo Valid Url found in command.");
 			} else {
@@ -21,7 +21,7 @@ public class Sak {
 				}
 			}
 		}
-		else if (args[0].equalsIgnoreCase("-HttpRequestIndex") || args[0].equalsIgnoreCase("-httprequestindex")) {	
+		else if (args[0].equalsIgnoreCase("-HttpRequestIndex")) {	
 			if (args.length != 2) {
 				System.out.println("Error:\nNo Valid Url found in command.");
 			} else {
