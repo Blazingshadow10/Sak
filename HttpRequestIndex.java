@@ -12,7 +12,7 @@ public class HttpRequestIndex extends HttpRequest {
             String[] urlData = urlString.split("\"");
             System.out.println(requestIndex);
 
-            for(int i = 0; i <= urlData.length; i++) {
+            for(int i = 0; i < urlData.length; i++) {
                 String requestURL = urlData[i];
                 HttpRequest Httprequest = new HttpRequest();
 
