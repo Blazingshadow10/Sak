@@ -1,7 +1,7 @@
 public class Sak {
     public static void main(String[] args) {
         System.out.println("");
-		if (args.length < 1) {
+		if (args.length == 0) {
 			System.out.println("Please use one of the listed commands below. You can pull up this information again with \"-Help\"." );
 			Help.printHelp();		 
 		} 
