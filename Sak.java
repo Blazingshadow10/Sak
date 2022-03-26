@@ -2,46 +2,37 @@ public class Sak {
     public static void main(String[] args) {
         System.out.println("");
 		if (args.length < 1) {
-			// Process no arguments.
-			System.out.println("This application requires at least one argument. Utilize the \"-Help\" parameter for more "
-				+"information.");
+			System.out.println("Please use one of the listed commands below. You can pull up this information again with \"-Help\"." );
 			Help.printHelp();		 
 		} 
-		else if (args[0].equalsIgnoreCase("-Help")) {
+		else if (args[0].equalsIgnoreCase("-Help") || args[0].equalsIgnoreCase("-help")) {
 			System.out.println("Executing Help...");
 			Help.printHelp();		  
 		} 
-		else if (args[0].equalsIgnoreCase("-HttpRequest")) {
-			System.out.println("Executing HttpRequest...");
-			if (args.length <2) {
-				System.out.println("The -HttpRequest function requires a valid URL as the second parameter.");
-			} else {
-				String URL = args[1];
-				HttpRequest request = new HttpRequest();
-				if (request.readURL(URL)) {
-					System.out.println(request);
-				}
-			}
-		}
-		else if (args[0].equalsIgnoreCase("-HttpRequestIndex")) {
-			 System.out.println("Executing HttpRequestIndex...");	
+		else if (args[0].equalsIgnoreCase("-HttpRequest") || args[0].equalsIgnoreCase("-httprequest")) {
 			if (args.length != 2) {
-				System.out.println("[[Your Error message here.]]");
+				System.out.println("Error:\nNo Valid Url found in command.");
 			} else {
-				String indexURL = args[1];
-				HttpRequest requestIndex = new HttpRequest();
-				if (requestIndex.readURL(indexURL)) {
-					System.out.println(requestIndex);
+				System.out.println("Executing HttpRequest...");
+				String requestedURL = args[1];
+				HttpRequest Httprequest = new HttpRequest();
+				if (Httprequest.readURL(requestedURL)) {
+					System.out.println(Httprequest);
 				}
 			}
 		}
-		else if (args[0].equalsIgnoreCase("-DoMagicStuff")) {
-			ThunderbirdModel model = new ThunderbirdModel();
-			model.LoadIndex();
-			model.LoadContacts();
-			System.out.println(model);
+		else if (args[0].equalsIgnoreCase("-HttpRequestIndex") || args[0].equalsIgnoreCase("-httprequestindex")) {	
+			if (args.length != 2) {
+				System.out.println("Error:\nNo Valid Url found in command.");
+			} else {
+				System.out.println("Executing HttpRequestIndex...");
+				String indexedURL = args[1];
+				HttpRequestIndex requestIndex = new HttpRequestIndex(indexedURL);
+				if (requestIndex.readURL(indexedURL)) {
+					System.out.println(indexedURL);
+			}
 		}
-
 		System.out.println("");
     }
+}
 }
